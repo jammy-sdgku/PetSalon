@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  href="./css/petSalon.css" rel="stylesheet">
+   
+    <title>Pretty Pet Salon Registration</title>
+</head>
+<body>
+<!--header section-->
+    <header class="primary-header">
+        <div class="header-flex">
+            <h1>Pretty Pet Salon</h1>&nbsp;&nbsp;&nbsp;&nbsp;
+            <nav><a href= "./petSalon.html">Home</a>&nbsp;&nbsp;
+                <a href= "./services.html">Services</a>	&nbsp;&nbsp;
+            </nav>
+        </div> 
+    </header>
+    
+<!--main container section-->
+    <div class="container">
+        <h1>Welcome to the Pretty Pet Salon!</h1><br>
+
+    <!--form section-->
+        <form class="regForm" id="regForm">
+            <fieldset class="regFormInfo">
+                <legend class ="formregistration-form-label">registration Information:*</legend>
+                <div class="regFormInput">
+                    <label for="inputPetname" class="form-label">Name:</label>
+                    <input type="name" class="form-control" id="inputPetname" aria-describedby="nameHelp" placeholder="Please add your pets name.">
+                    <div id="nameHelp" class="form-text"></div>
+                </div>
+                <div class="regFormInput">
+                    <label for="inputAge" class="form-label">Age:</label>
+                    <input type="age" class="form-control" id="inputAge" placeholder="Please add your pets age.">
+                </div>
+                <div class="regFormInput">
+                    <label for="inputGender" class="form-label">Please select a gender:</label>
+                    <select name="gender" id ="inputGender" form="registration">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="regFormInput">
+                    <label for="inputBreed" class="form-label">Breed:</label>
+                    <input type="breed" class="form-control" id="inputBreed" placeholder="Please add your pets breed.">
+                </div>
+                <div class="regFormInput">
+                    <label for="inputService" class="form-label">Please choose a service:</label>
+        <!--<input type="service" class="form-control"> -->
+                    <select name="service" id ="inputService" form="registration">
+                        <option value="Bath and Brush">Bath and Brush</option>
+                        <option value="Bath and Trim">Bath and Trim</option>
+                        <option value="Full Groom">Full Groom</option>
+                        <option value="De-Shedding">De-Shedding</option>
+                        <option value="Express Groom">Express Groom</option>
+                        <option value="Puppy Package">Puppy Package</option>
+                    </select>
+                </div>
+            <button class="btn" onclick="createService(event)" id="submitButton">Register</button>
+        </fieldset>
+        </form><br><br>
+
+        <h2>Registered Appointments</h2><br>
+        <div class="flex-container"></div>
+            <div class="container bg-light" id="reg-list"></div>
+            
+            </div>
+        </div>
+
+        
+    </div>
+<!--script section to connect to js-->   
+    <script src="./script/register.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!--footer container section-->
+    <footer class="footer-container">
+        <p>Copyright &copy; 2025</p>&nbsp;&nbsp;&nbsp;
+        <p>Pretty Pet Salon </p>
+    </footer>
+</body>
+</html>

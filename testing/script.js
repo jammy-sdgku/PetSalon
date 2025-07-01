@@ -70,6 +70,9 @@ for (let i=0; i<fruits.length; i++){
     console.log(fruits[i]);
 }
 
+//Remove items from the front of array
+fruits.shift();
+
 //Remove by position (position/index, how many items to remove)
 fruits.splice(3,1);
 
