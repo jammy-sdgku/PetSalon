@@ -26,7 +26,7 @@ function createService(event) {
     console.log("Breed: ", breed);
     console.log("Service: ", koservice);
 
-    //send to html
+    //send to html as cards
     const card = document.createElement("div");
     card.className="col-sm-6";
     card.innerHTML = `<div class="column">
@@ -44,7 +44,7 @@ function createService(event) {
                     </div>`;
 
     cardContainer.appendChild(card); 
-
+    
     //for ux please clear form
     form.reset();
 };

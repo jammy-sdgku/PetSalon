@@ -30,6 +30,14 @@ h1 {
 
 th,td {text-align:right; padding:4px}
 
+table, th, td {
+  border:1px solid black;
+  text-align: center;
+  align-items: center;
+  margin: auto;
+  background-color: antiquewhite;
+}
+
 .header-flex h1 {
   margin: 0;
 }
@@ -210,15 +218,20 @@ input:focus{
     }
     .primary-header {
         width: 100%;
-        height: 200px;
+        height: 12.5em;
     }
      .countDisplay {
-        margin-left: 200px;
+        margin:auto;
         border-radius: 1.25em;
-        width: 220px;
-        margin-left: 400px;
+        width: 13.75em;
         align-items: center;
     }
+
+ img { 
+      height: 12.5em;
+      width: 12.5em;
+    }
+
     .nameDisplay p {
     margin-left: 9.375em;
     }
@@ -234,20 +247,30 @@ input:focus{
     }
     .primary-header {
         width: 100%;
-        height: 200px;
+        height: 12.5em;
     }
+
+    .primary-header h1 {
+      font-size: 1.25em; 
+    }
+ 
+    img { 
+      height: 6.25em;
+      width: 6.25em;
+    }
+
     .countDisplay {
-        margin-left: 200px;
+        margin-left: 6.25em;
         border-radius: 1.25em;
-        width: 120px;
+        width: 7.5em;
         }
     .nameDisplay {
-    width: 150px;
+    width: 9.375em;
     }
     h2 {
-        font-size: 20px;
+        font-size: 1.25em;
         text-align: center;
-        margin: 10px;
+        margin: 0.625em;
         }
     .nameDisplay p {
         margin-left: 5em;
