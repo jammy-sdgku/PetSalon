@@ -35,6 +35,7 @@ function createService(event) {
         <td>${gender}</td>
         <td>${breed}</td>
         <td>${koservice}</td>
+        <td><button onclick="deleteData(this)">Delete</button></td>
     `;
      tableBody.appendChild(newRow);
 
@@ -42,4 +43,11 @@ function createService(event) {
     form.reset();
 };
    
-    
+function deleteData(button) {
+
+    // Get the parent row of the clicked button
+    let row = button.parentNode.parentNode;
+
+    // Remove the row from the table
+    row.parentNode.removeChild(row);
+}
