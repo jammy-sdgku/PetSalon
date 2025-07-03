@@ -1,3 +1,37 @@
+//salon information
+const salon={
+    name: "Pretty Pet Salon",
+    phone: "123-456-7891",
+    address: {
+        street:"123how street",
+        city: "Los Angelos",
+        state: "MD",
+        zip: "21234"
+    },
+    hours: {
+        open: "9:00am",
+        close: "6:00pm",
+    },
+    owner: "James Jones"
+}
+
+function DisplaySalonInfo(){
+    let salonContainer = document.getElementById("salonContainer");
+    let information = "";
+
+    information += `
+    <h2>${salon.name}</h2>
+    <p><strong> Owner: ${salon.owner} </p><br>
+    <p><strong> Phone: ${salon.phone} </p><br>
+    <p><strong> Address: ${salon.address.street}, ${salon.address.city}, ${salon.address.state}, ${salon.address.zip} </p><br>
+    <p><strong> Hours: ${salon.hours.open} To ${salon.hours.close}</p><br><br>
+    `;
+   
+    salonContainer.innerHTML  = information;
+}
+
+DisplaySalonInfo();
+
 
 //get the form
 const form = document.getElementById("regForm");
