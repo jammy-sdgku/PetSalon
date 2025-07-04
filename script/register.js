@@ -46,16 +46,20 @@ function createService(event) {
     event.preventDefault();
 
     //get submitted info
+    const serDate = document.getElementById('inputSerDate').value;
     const petname = document.getElementById('inputPetname').value;
     const age = document.getElementById('inputAge').value;
     const gender = document.getElementById('inputGender').value;
+    const type = document.getElementById('inputType').value;
     const breed = document.getElementById('inputBreed').value;
     const koservice = document.getElementById('inputService').value;
 
     //add the values or console
+    console.log("Date of Service: ", serDate);
     console.log("Pet Name: ", petname);
     console.log("Age: ", age);
     console.log("Gender: ", gender);
+    console.log("Pet Size: ", type);
     console.log("Breed: ", breed);
     console.log("Service: ", koservice);
 
@@ -66,11 +70,13 @@ function createService(event) {
                         <div class="col-sm-6">
                             <div class="card text-dark bg-light mb-3" p-4 style="max-width: 18rem; ">
                                 <div class="card-body">
+                                    <h4 class="card-title">${serDate}</h4>
                                     <h3 class="card-title">${petname}</h3>
                                     <h4 class="card-subtitle mb-2 text-muted">${age} years old</h4>
                                     <h5 class="card-subtitle mb-2 text-muted">${gender}</h5>
+                                    <h5 class="card-subtitle mb-2 text-muted">${type}</h5>
                                     <h5 class="card-subtitle mb-2 text-muted">${breed}</h5>
-                                    <p> ${koservice}</p>
+                                    <p style="color:#980000"; > ${koservice}</p>
                                 </div>
                             </div>
                         </div>

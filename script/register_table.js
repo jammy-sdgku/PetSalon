@@ -47,16 +47,20 @@ function createService(event) {
     event.preventDefault();
 
     //get submitted info
+    const serDate = document.getElementById('inputSerDate').value;
     const petname = document.getElementById('inputPetname').value;
     const age = document.getElementById('inputAge').value;
     const gender = document.getElementById('inputGender').value;
+    const type = document.getElementById('inputType').value;
     const breed = document.getElementById('inputBreed').value;
     const koservice = document.getElementById('inputService').value;
 
     //add the values or console
+    console.log("Date of Service: ", serDate);
     console.log("Pet Name: ", petname);
     console.log("Age: ", age);
     console.log("Gender: ", gender);
+    console.log("Pet Size: ", type);
     console.log("Breed: ", breed);
     console.log("Service: ", koservice);
 
@@ -64,11 +68,13 @@ function createService(event) {
     
     const newRow= document.createElement("tr");
     newRow.innerHTML = `
+        <td>${serDate}</td>    
         <td>${petname}</td>
         <td>${age} years old</td>
         <td>${gender}</td>
+        <td>${type}</td>
         <td>${breed}</td>
-        <td>${koservice}</td>
+        <td style="color:#980000";>${koservice}</td>
         <td><button onclick="deleteData(this)">Delete</button></td>
     `;
      tableBody.appendChild(newRow);

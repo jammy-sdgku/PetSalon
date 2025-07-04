@@ -26,6 +26,11 @@
         <form class="regForm" id="regForm">
             <fieldset class="regFormInfo">
                 <legend class ="formregistration-form-label">Registration Information:*</legend>
+                 <div class="regFormInput">
+                    <label for="inputSerDate" class="form-label">Date of Service:</label>
+                    <input type="date" class="form-control" id="inputSerDate" aria-describedby="nameHelp" placeholder="Date of Service.">
+                    <div id="nameHelp" class="form-text"></div>
+                </div>
                 <div class="regFormInput">
                     <label for="inputPetname" class="form-label">Name:</label>
                     <input type="name" class="form-control" id="inputPetname" aria-describedby="nameHelp" placeholder="Please add your pets name.">
@@ -38,8 +43,20 @@
                 <div class="regFormInput">
                     <label for="inputGender" class="form-label">Please select a gender:</label>
                     <select name="gender" id ="inputGender" form="registration">
+                        <option value="">Select</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="regFormInput">
+                    <label for="inputType" class="form-label">Please select your pet's size:</label>
+                    <select name="type" id ="inputType" form="registration">
+                        <option value="">Select</option>
+                        <option value="Extra Large">Extra Large</option>
+                        <option value="Large">Large</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Small">Small</option>
+                        <option value="Extra Small">Extra Small</option>
                     </select>
                 </div>
                 <div class="regFormInput">
@@ -50,12 +67,14 @@
                     <label for="inputService" class="form-label">Please choose a service:</label>
         <!--<input type="service" class="form-control"> -->
                     <select name="service" id ="inputService" form="registration">
+                        <option value="">Select</option>
                         <option value="Bath and Brush">Bath and Brush</option>
                         <option value="Bath and Trim">Bath and Trim</option>
                         <option value="Full Groom">Full Groom</option>
                         <option value="De-Shedding">De-Shedding</option>
                         <option value="Express Groom">Express Groom</option>
                         <option value="Puppy Package">Puppy Package</option>
+                        <option value="Self Wash Station">Self Wash Station</option>
                     </select>
                 </div>
             <button class="btn" onclick="createService(event)" id="submitButton">Register</button>
@@ -67,9 +86,11 @@
             <table id="regTable" class="table">
                 <thead>
                     <tr>
+                        <th>Date of Service</th>
                         <th>Pet Name</th>
                         <th>Age</h4>
                         <th>Gender</th>
+                        <th>Type of Pet</th>
                         <th>Breed</th>
                         <th>Service</th>
                     </tr>
