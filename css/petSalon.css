@@ -2,14 +2,29 @@
 @charset "utf-8";
 /*global*/
 
+:root {
+    /*light mode by default*/
+    --background: lightblue;
+    --surface: #FDFDFF;
+    --text: #1A2744;
+    --button:#008FFF;
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
+.dark-mode {
+    --background: #1A2744;
+    --surface: #23345A;
+    --text: #F4F4FB;
+    --button:#45ADFF;
+}
+
 body {
     font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: lightblue;
+    background-color: var(--background);
     height: 100vh;
 }
 
@@ -24,6 +39,7 @@ a {
 }
 
 h1 {
+  color: var(--text);
   text-align: center;
   margin-top: 0.625em;
 }
@@ -83,6 +99,18 @@ img {
 button {
   background-color: yellow;
   padding: 0.3125em;
+}
+button:hover, a:hover {
+    opacity: 0.5;
+}
+
+#changeModeButton {
+  cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 5px;
+    border-radius: 20px;
+    transition: opacity 0.3s ease;
 }
 
 table button {
@@ -224,6 +252,18 @@ input{
 
 input:focus{
   outline: 0.0625em solid #064247;
+}
+
+input.error{
+  border-color: red;
+}
+
+span.error{
+  border-color: red;
+}
+
+input.success{
+  border-color: green;
 }
 
 /*cards*/

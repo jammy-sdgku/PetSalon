@@ -90,4 +90,4 @@ function deleteData(button) {
 
     // Remove the row from the table
     row.parentNode.removeChild(row);
-}
+};

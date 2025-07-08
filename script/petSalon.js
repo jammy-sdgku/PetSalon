@@ -78,5 +78,11 @@ console.log(`We have ${pets.length} pets registered at this time!`);
 //call the function
 petInfo();
 
+$("#changeModeButton").click(function(){
+        $("body").toggleClass("dark-mode");
 
+        const isDark = $("body").hasClass("dark-mode");
+
+        $("#lm_h1").text(isDark ? "Dark Mode" : "Light Mode");
+    });
     
