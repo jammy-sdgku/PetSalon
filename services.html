@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link  href="./css/petSalon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Pretty Pet Salon Services</title>
 </head>
 <body>
@@ -19,160 +20,55 @@
     
 <!--main container section-->
     <div class="container">
-        <h1>Welcome to the Pretty Pet Salon!</h1><br>
-        <div class="serv-flex-container">
-            <table id="servTable" class="table">
+        <h1>Services</h1><br>
+        
+      <form id="servRegForm" class="regForm">
+
+        <div class="mb-3">
+            <label for="serviceName" class="form-label"> Name </label>
+            <input type="text" id="serviceName"  name="serviceName" class="form-control shadow-none" placeholder="Premium Bath" minlength="2">
+        </div>
+
+        <div class="mb-3">
+            <label for="serviceDescription" class="form-label"> Description </label>
+            <input type="text" id="serviceDescription"  name="serviceDescription" class="form-control shadow-none" placeholder="Includes shampoo & towel dry">
+        </div>
+
+        <div class="mb-3">
+            <label for="servicePrice" class="form-label"> Price </label>
+            <input type="number" id="servicePrice"  name="servicePrice" class="form-control shadow-none" placeholder="10.99" step="any">
+        </div>
+
+        <button type="submit" class="btn btn-primary"  id="regServButton" > Register Service </button>
+        <button class="btn btn-secondary" onclick="servRegForm.reset()"> Cancel </button>
+
+    </form><br>
+     
+    <h2>Registered Appointments</h2><br>
+        <div class="flex-container">
+            <table id="regTable" class="table">
                 <thead>
                     <tr>
-                        <th class="thead">Service</th>
-                        <th class="thead">Pet Size</th>
-                        <th class="thead">Price</th>
+                        <th>Service Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td style="font-weight: bold;">Bath and Brush</td>
-                        <td>Extra Large</td>
-                        <td class="price">$60</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Large</td>
-                        <td class="price">$40</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Medium</td>
-                        <td class="price">$30</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Small / Extra Small</td>
-                        <td class="price">$20</td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight: bold;">Bath and Trim</td>
-                        <td>Extra Large</td>
-                        <td class="price">$80</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Large</td>
-                        <td class="price">$60</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Medium</td>
-                        <td class="price">$40</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Small / Extra Small</td>
-                        <td class="price">$30</td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight: bold;">Full Groom</td>
-                        <td>Extra Large</td>
-                        <td class="price">$100</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Large</td>
-                        <td class="price">$80</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Medium</td>
-                        <td class="price">$60</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Small / Extra Small</td>
-                        <td class="price">$40</td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight: bold;">De-Shedding</td>
-                        <td>Extra Large</td>
-                        <td class="price">$40</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Large</td>
-                        <td class="price">$30</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Medium</td>
-                        <td class="price">$20</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Small / Extra Small</td>
-                        <td class="price">$10</td>
-                    </tr>
-                </tbody>
-            </table>
-                    <table id="servTable2" class="table">
-                <thead>
-                    <tr>
-                        <th class="thead">Service</th>
-                        <th class="thead">Pet Size</th>
-                        <th class="thead">Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="font-weight: bold;">Express Groom</td>
-                        <td>Extra Large</td>
-                        <td class="price">$70</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Large</td>
-                        <td class="price">$50</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Medium</td>
-                        <td class="price">$40</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Small / Extra Small</td>
-                        <td class="price">$30</td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight: bold;">Puppy Package</td>
-                        <td>Extra Large</td>
-                        <td class="price">$40</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Large</td>
-                        <td class="price">$30</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Medium</td>
-                        <td class="price">$35</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>Small / Extra Small</td>
-                        <td class="price">$20</td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight: bold;">Self Grooming Station</td>
-                        <td>All Sizes</td>
-                        <td class="price">$10</td>
-                    </tr>
-                    
+
                 </tbody>
             </table>
         </div>
+
     </div>
 <!--script section to connect to js-->   
-    <script src="./script/petSalon.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script> 
+
+    <script src="./node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+     
+    <script src="./script/services.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 <!--footer container section-->
     <footer class="footer-container">
