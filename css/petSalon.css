@@ -254,15 +254,15 @@ input:focus{
   outline: 0.0625em solid #064247;
 }
 
-input.error{
+.input-error{
+  border-color: red !important;
+}
+
+.span-error{
   border-color: red;
 }
 
-span.error{
-  border-color: red;
-}
-
-input.success{
+.input-success{
   border-color: green;
 }
 

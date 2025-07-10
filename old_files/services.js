@@ -73,7 +73,7 @@ function createService(event) {
      tableBody.appendChild(newRow);
 
     //for ux please clear form
-    $("#servRegForm")[0].reset();
+    form.reset();
 };
    
 function deleteData(button) {

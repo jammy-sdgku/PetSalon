@@ -5,10 +5,11 @@
 //catching click event
         $("#regServButton").click(function(){
 //select your form and validate
+
         $("#servRegForm").validate({
-                errorClass:"input.error",
+                errorClass:"input-error",
                 errorElement:"span",
-                validClass:"success",
+                validClass:"input-success",
                 rules:{
                     serviceName:{
                         required:true, 
@@ -18,27 +19,23 @@
                         required:true,
                         minlength: 2
                     },
-                    servicePrice: "required",
+                    servicePrice: {
+                        required: true,
+                        min: 0
+                    }
                 },
                 messages: {
                     serviceName: "Please select the service requested",
                     serviceDescription: "Please enter a description",
                     servicePrice: "Please enter a price",   
                 },
-                highlight: function (input) {
-                        $(input).addClass('error');
-                    },
-                unhighlight: function (input) {
-                $(input).removeClass('error');
-                $(input).addClass('success');
-                $(".cancel").click(function() {
-                    validator.resetForm();
-                });
-                },
+             
+                submitHandler:function(form){
+                   createService();  
+                   
+                }
             });
-       
-        createService();     
-       
+         
         });
     });
 
@@ -77,13 +74,14 @@ function createService() {
         <td><button onclick="deleteData(this)">Delete</button></td>
     `;
      tableBody.appendChild(newRow);
-
+    alert("Thank you");
     //for ux please clear form
     $("#servRegForm")[0].reset();
-    /*$.fn.clearValidation = function(){var v = $(this).validate();$("#servRegForm",this).each(function(){v.successList.push(this);v.showErrors();});v.resetForm();v.reset();};
-   */
+   //removeValidationErrors(servRegForm);
 };
-   
+
+
+//delete row of data button
 function deleteData(button) {
 
     // Get the parent row of the clicked button
@@ -91,6 +89,19 @@ function deleteData(button) {
 
     // Remove the row from the table
     row.parentNode.removeChild(row);
+}
+
+
+//attempting to clear the error messages from form
+function removeValidationErrors(servRegForm) {
+    var myform = $('#servRegForm');
+    myform.get(0).reset();
+    var myValidator = myform.validate();
+    $(myform).removeData('validator');
+    $(myform).removeData('unobtrusiveValidation');
+    $.validator.unobtrusive.parse(myform);
+    myValidator.resetForm();
+    $('#' + frmId + ' input, select').removeClass('input.error');
 }
 
         
