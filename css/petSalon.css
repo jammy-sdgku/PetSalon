@@ -34,8 +34,8 @@ p {
   align-items: center;   
 }
 a {
-  text-decoration: none;
-  color: black;
+  text-decoration: none !important;
+  color: black !important;
 }
 
 h1 {

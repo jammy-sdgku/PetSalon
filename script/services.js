@@ -1,5 +1,4 @@
 
-
 //validate info
     $(document).ready(function(){
 //catching click event
@@ -53,32 +52,68 @@ const tableBody = document.querySelector('#regTable tbody');
 
 //function to be triggered after clicking submit
 function createService() {
-    
-    //get submitted info
-    const name = $("#serviceName").val().trim();
-    const description = $("#serviceDescription").val().trim();
-    const price = $("#servicePrice").val().trim();
-    
-    //add the values or console
-    console.log("Name of Service: ", name);
-    console.log("Description: ", description);
-    console.log("Price: $", price);
-    
-    //send to html as table
-    
-    const newRow= document.createElement("tr");
-    newRow.innerHTML = `
-        <td>${name}</td>    
-        <td>${description}</td>
-        <td>$${price}</td>
-        <td><button onclick="deleteData(this)">Delete</button></td>
-    `;
-     tableBody.appendChild(newRow);
-    alert("Thank you");
-    //for ux please clear form
-    $("#servRegForm")[0].reset();
-   //removeValidationErrors(servRegForm);
-};
+
+//save data
+    $("#regServButton").click(function(event){
+        event.preventDefault();
+
+        //get user info for the input
+        const newService = {
+            name : $("#serviceName").val().trim(),
+            description : $("#serviceDescription").val().trim(),
+            price : $("#servicePrice").val().trim()
+        }
+
+        //get the users json created if doesent exist
+        let services = JSON.parse(localStorage.getItem("services")) || [];
+
+        //add the new users to users JSON
+        services.push(newService);
+
+        //save to local storage
+        localStorage.setItem("services", JSON.stringify(services));
+        
+    alert(`We saved your service as ${newService.name}, ${newService.description}, ${newService.price} successfully!`);
+     
+    $("form").get(0).reset();
+
+    loadData(); 
+     
+
+//start here with load function***********
+    function loadData(){
+
+        //get information stored
+        const nameStored = (newService.name);
+        const descriptionStored = (newService.description);
+        const priceStored = (newService.price);
+        
+        //send to HTML table
+        const newRow= document.createElement("tr");
+        newRow.innerHTML = `
+            <td>${nameStored}</td>    
+            <td>${descriptionStored}</td>
+            <td>$${priceStored}</td>
+            <td><button onclick="deleteData(this)">Delete</button></td>
+        `;
+        tableBody.appendChild(newRow);
+
+        // $("#result").text(!nameStored ? "No data : nameStored");
+
+        //if there is a usernameStored, add it to the HTML result area
+        /*if (nameStored, descriptionStored, priceStored){
+                $("#result").text(`${nameStored}, ${descriptionStored}, ${priceStored}`);
+        }else{
+            $("#result").text("No data found");
+        };
+        */
+
+        alert("Thank you");
+        //for ux please clear form
+    // $("#servRegForm")[0].reset();
+    //removeValidationErrors(servRegForm);
+    }}
+)};
 
 
 //delete row of data button
@@ -89,19 +124,7 @@ function deleteData(button) {
 
     // Remove the row from the table
     row.parentNode.removeChild(row);
-}
+};
 
-
-//attempting to clear the error messages from form
-function removeValidationErrors(servRegForm) {
-    var myform = $('#servRegForm');
-    myform.get(0).reset();
-    var myValidator = myform.validate();
-    $(myform).removeData('validator');
-    $(myform).removeData('unobtrusiveValidation');
-    $.validator.unobtrusive.parse(myform);
-    myValidator.resetForm();
-    $('#' + frmId + ' input, select').removeClass('input.error');
-}
 
         
