@@ -1,5 +1,5 @@
 
-//validate info
+//validate info ------------------------------------------------------
     $(document).ready(function(){
 //catching click event
         $("#regServButton").click(function(){
@@ -38,7 +38,7 @@
         });
     });
 
-//table data----------------------------------------------
+//table data-----------------------------------------------------------
 
 //get the form
 
@@ -53,9 +53,9 @@ const tableBody = document.querySelector('#regTable tbody');
 //function to be triggered after clicking submit
 function createService() {
 
-//save data
-    $("#regServButton").click(function(event){
-        event.preventDefault();
+//save data ------------------------------------------------------------
+ //   $("#regServButton").click(function(event){
+ //       event.preventDefault();
 
         //get user info for the input
         const newService = {
@@ -73,14 +73,13 @@ function createService() {
         //save to local storage
         localStorage.setItem("services", JSON.stringify(services));
         
-    alert(`We saved your service as ${newService.name}, ${newService.description}, ${newService.price} successfully!`);
+    alert(`We saved your service as ${newService.name}, with a description of ${newService.description}, and a price of $${newService.price} successfully! Thank you for your order!`);
      
     $("form").get(0).reset();
 
     loadData(); 
      
-
-//start here with load function***********
+//start here with load function---------------------------------------
     function loadData(){
 
         //get information stored
@@ -97,23 +96,8 @@ function createService() {
             <td><button onclick="deleteData(this)">Delete</button></td>
         `;
         tableBody.appendChild(newRow);
+    }};
 
-        // $("#result").text(!nameStored ? "No data : nameStored");
-
-        //if there is a usernameStored, add it to the HTML result area
-        /*if (nameStored, descriptionStored, priceStored){
-                $("#result").text(`${nameStored}, ${descriptionStored}, ${priceStored}`);
-        }else{
-            $("#result").text("No data found");
-        };
-        */
-
-        alert("Thank you");
-        //for ux please clear form
-    // $("#servRegForm")[0].reset();
-    //removeValidationErrors(servRegForm);
-    }}
-)};
 
 
 //delete row of data button

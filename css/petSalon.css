@@ -31,8 +31,13 @@ body {
 p {
   display: inline-block;
   line-height: 1.5;
-  align-items: center;   
+  align-items: center;  
 }
+
+#salonContainer p {
+  color: var(--text)  
+}
+
 a {
   text-decoration: none !important;
   color: black !important;
@@ -42,6 +47,10 @@ h1 {
   color: var(--text);
   text-align: center;
   margin-top: 0.625em;
+}
+
+#salonContainer h2 {
+  color: var(--text);
 }
 
 th,td {
@@ -75,7 +84,7 @@ table, th, td {
 
 /*settings for paragraph in nameDisplay section*/
 .nameDisplay p {
-    margin-left: 9.375em;
+    margin-left: 7.5em;
 }
 
 /*list settings*/
@@ -290,6 +299,7 @@ input:focus{
     display: flex;
     justify-content:center;
     padding: 0.25em;
+    color: var(--text)
 }
 
 /*@media section tablet View*/
@@ -317,7 +327,7 @@ input:focus{
     }
 
     .nameDisplay p {
-    margin-left: 9.375em;
+    margin-left: 7.5em;
     }
 }
 
