@@ -28,13 +28,10 @@
                     serviceDescription: "Please enter a description",
                     servicePrice: "Please enter a price",   
                 },
-             
                 submitHandler:function(form){
-                   createService();  
-                   
+                   createService();    
                 }
             });
-         
         });
     });
 
